@@ -1,6 +1,6 @@
 class Flight < ApplicationRecord
-    #has_many :bookings
-    #has_many :passengers, through: :bookings
+    has_many :bookings
+    has_many :passengers, through: :bookings
 
     belongs_to :departure, class_name: 'Airport'
     belongs_to :arrival, class_name: 'Airport'
@@ -12,7 +12,7 @@ class Flight < ApplicationRecord
 
     class << self
         def current_time
-        Time.current.in_time_zone(Time.now.zone).time
+        Time.now
         end
     end
 

@@ -21,6 +21,6 @@ airports = %w[
   
   
   Airport.ids.each_slice(2).map do |ids|
-      Flight.create( departure_id: ids.first[0], arrival_id: ids.first[1], date: rand(13.days).seconds.from_now, duration: rand(24.hours).to_i, created_at: Time.now, updated_at: Time.now )
+      Flight.create( departure_id: ids.first, arrival_id: ids.second, date: rand(13.days).seconds.from_now, duration: rand(24.hours).to_i, created_at: Time.now, updated_at: Time.now )
   end
   
